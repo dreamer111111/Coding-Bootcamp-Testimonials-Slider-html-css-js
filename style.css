@@ -1,0 +1,186 @@
+/* 1. Variables & Reset */
+:root {
+  /* Colors */
+  --blue-950: hsl(240, 38%, 20%);
+  --gray-400: hsl(240, 18%, 77%);
+
+  /* Font Family */
+  --ff-inter: "Inter", sans-serif;
+
+  /* Font Weight */
+  --fw-light: 300;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* Relative Sizes */
+  --fs-base: 1.125rem; /* 18px */
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-inter);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-light);
+  color: var(--blue-950);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: url("./images/pattern-curve.svg") no-repeat bottom left;
+  background-size: 20% auto;
+  overflow-x: hidden;
+}
+
+/* 2. Main Container */
+.testimonial-slider {
+  width: 90%;
+  max-width: 70rem; /* ~1120px */
+  margin: 2rem auto;
+}
+
+.slider-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 3. Image Section & Backgrounds */
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 20.5rem;
+  background-image: 
+    url("./images/pattern-bg.svg"); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding: 2.5rem; 
+}
+
+/* Creating the zig-zag as a pseudo-element for precise positioning */
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 15%;
+  width: 20%;
+  height: 20%;
+  background: url("./images/pattern-bg.svg") no-repeat center/contain; 
+  opacity: 0.5; 
+}
+
+.person-img {
+  width: 100%;
+  display: block;
+  border-radius: 0.5rem;
+  box-shadow: 0 1.5rem 3rem -1rem rgba(0, 0, 0, 0.2);
+}
+
+/* Controls / Navigation */
+.controls {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  display: flex;
+  border-radius: 2rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.125rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: #f3f3f3;
+}
+
+/* 4. Text Content */
+.text-container {
+  margin-top: 3rem;
+  background: url("./images/pattern-quotes.svg") no-repeat top center / 4rem;
+  padding-top: 1.5rem;
+}
+
+#quote {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+#name {
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+}
+
+#job-title {
+  color: var(--gray-400);
+  font-weight: var(--fw-medium);
+  font-size: 0.95rem;
+}
+
+/* 5. Desktop Layout Switch */
+@media (min-width: 60rem) {
+  .slider-content {
+    flex-direction: row-reverse;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .image-container {
+    max-width: 33.75rem;
+    padding: 4rem;
+    flex-shrink: 0;
+  }
+
+  .controls {
+    left: 4.5rem;
+    transform: none;
+    bottom: 2.5rem;
+  }
+
+  .text-container {
+    margin-top: 0;
+    margin-right: -4rem; 
+    z-index: 5;
+    background-position: 15% 0;
+    background-size: 6rem;
+    padding-top: 4rem;
+  }
+
+  #quote {
+    font-size: 2rem;
+    max-width: 38rem;
+    margin-bottom: 2rem;
+  }
+
+  .author-info {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  #name, #job-title {
+    font-size: 1.25rem;
+  }
+}
