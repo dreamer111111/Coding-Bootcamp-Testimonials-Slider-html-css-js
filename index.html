@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+  </head>
+  <body>
+    <main>
+      <section class="testimonial-slider" aria-label="Student Testimonials">
+        <div class="slider-content" aria-live="polite">
+          <div class="image-container">
+            <img
+            class="person-img"
+              id="person-img"
+              src="images/image-tanya.jpg"
+              alt="Portrait of Tanya Sinclair"
+            />
+
+            <div class="controls">
+              <button id="prev-btn" aria-label="Previous testimonial">
+                <img src="images/icon-prev.svg" alt="" />
+              </button>
+              <button id="next-btn" aria-label="Next testimonial">
+                <img src="images/icon-next.svg" alt="" />
+              </button>
+            </div>
+          </div>
+
+          <div class="text-container">
+            <blockquote class="description">
+              <p id="quote">
+                “ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I'm now in the job of my dreams and so excited about the future. ”
+              </p>
+            </blockquote>
+
+            <p class="author-info">
+              <strong id="name" class="name">Tanya Sinclair</strong>
+              <span id="job-title" class="job-title">UX Engineer</span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
