@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: []
-- Live Site URL: []
+- Solution URL: [https://github.com/dreamer111111/Coding-Bootcamp-Testimonials-Slider-html-css-js]
+- Live Site URL: [https://coding-bootcamp-testimonials-slider-one.vercel.app/]
 ## My process
 
 ### Built with
